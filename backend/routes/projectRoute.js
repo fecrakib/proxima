@@ -1,19 +1,15 @@
 const express=require("express");
+const { postProject, getAllprojects, getSinglePorject } = require("../controllers/projectControl");
+
 //router
 const router=express.Router();
 //routes
 //get all project
-router.get('/',(req,res)=>{
-    res.json({message:'get all projects'})
-})
+router.get('/',getAllprojects)
 //get a single project
-router.get('/:id',(req,res)=>{
-    res.json({message:'get a single project'})
-})
+router.get('/:id',getSinglePorject)
 //post a new project
-router.post('/',(req,res)=>{
-    res.json({message:"post a new project"})
-})
+router.post('/',postProject)
 //delete a project
 router.delete('/:id',(req,res)=>{
     res.json({message:'delete a new project'})
